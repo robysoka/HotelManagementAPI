@@ -1,0 +1,484 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HotelTsgDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="spCamera_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nr_camera" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spCamera_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spCamera_GetByNumber" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nr_camera" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spCamera_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nr_camera" Type="int" Mode="In" />
+          <Parameter Name="capacitate" Type="int" Mode="In" />
+          <Parameter Name="pret" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spCamere_UpdatePrice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nr_camera" Type="int" Mode="In" />
+          <Parameter Name="pret" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spClient_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spClient_GetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_client" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spClient_GetByName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nume" Type="varchar" Mode="In" />
+          <Parameter Name="prenume" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spClient_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_client" Type="int" Mode="In" />
+          <Parameter Name="nume" Type="varchar" Mode="In" />
+          <Parameter Name="prenume" Type="varchar" Mode="In" />
+          <Parameter Name="telefon" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spDotare_camera_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_dotare" Type="int" Mode="In" />
+          <Parameter Name="nr_camera" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spDotare_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spDotare_GetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_dotare" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spDotare_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_dotare" Type="int" Mode="In" />
+          <Parameter Name="denumire" Type="varchar" Mode="In" />
+          <Parameter Name="pret" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spGetDotByRoom" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nr_camera" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spGetRoomByDot" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_dotare" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spGetServiceByRez" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nr_camera" Type="int" Mode="In" />
+          <Parameter Name="id_client" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spRezervare_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spRezervare_GetAllByClient" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_client" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spRezervare_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_client" Type="int" Mode="In" />
+          <Parameter Name="nr_camera" Type="int" Mode="In" />
+          <Parameter Name="nr_persoane" Type="int" Mode="In" />
+          <Parameter Name="data_check_in" Type="date" Mode="In" />
+          <Parameter Name="data_check_out" Type="date" Mode="In" />
+          <Parameter Name="data_rezervare" Type="date" Mode="In" />
+        </Function>
+        <Function Name="spRezervareRaport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nr_camera" Type="int" Mode="In" />
+          <Parameter Name="id_client" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spRezervareRaportv2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nr_camera" Type="int" Mode="In" />
+          <Parameter Name="id_client" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spServiciu_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spServiciu_GetById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_serviciu" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spServiciu_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_serviciu" Type="int" Mode="In" />
+          <Parameter Name="denumire" Type="varchar" Mode="In" />
+          <Parameter Name="pret" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spServiciu_rezervare_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_client" Type="int" Mode="In" />
+          <Parameter Name="nr_camera" Type="varchar" Mode="In" />
+          <Parameter Name="id_serviciu" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="HotelTsgDBModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HotelTsgDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="HotelTsgDBEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="spCamera_Delete">
+          <Parameter Name="nr_camera" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spCamera_GetAll" ReturnType="Collection(HotelTsgDBModel.spCamera_GetAll_Result)" />
+          <FunctionImport Name="spCamera_GetByNumber" ReturnType="Collection(HotelTsgDBModel.spCamera_GetByNumber_Result)">
+          <Parameter Name="nr_camera" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spCamera_Insert">
+            <Parameter Name="nr_camera" Mode="In" Type="Int32" />
+            <Parameter Name="capacitate" Mode="In" Type="Int32" />
+            <Parameter Name="pret" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spCamere_UpdatePrice">
+            <Parameter Name="nr_camera" Mode="In" Type="Int32" />
+            <Parameter Name="pret" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spClient_GetAll" ReturnType="Collection(HotelTsgDBModel.spClient_GetAll_Result)" />
+          <FunctionImport Name="spClient_GetById" ReturnType="Collection(HotelTsgDBModel.spClient_GetById_Result)">
+          <Parameter Name="id_client" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spClient_GetByName" ReturnType="Collection(HotelTsgDBModel.spClient_GetByName_Result)">
+            <Parameter Name="nume" Mode="In" Type="String" />
+            <Parameter Name="prenume" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spClient_Insert">
+            <Parameter Name="id_client" Mode="In" Type="Int32" />
+            <Parameter Name="nume" Mode="In" Type="String" />
+            <Parameter Name="prenume" Mode="In" Type="String" />
+            <Parameter Name="telefon" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spDotare_camera_Insert">
+            <Parameter Name="id_dotare" Mode="In" Type="Int32" />
+            <Parameter Name="nr_camera" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spDotare_GetAll" ReturnType="Collection(HotelTsgDBModel.spDotare_GetAll_Result)" />
+          <FunctionImport Name="spDotare_GetById" ReturnType="Collection(HotelTsgDBModel.spDotare_GetById_Result)">
+          <Parameter Name="id_dotare" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spDotare_GetNameRaport" ReturnType="Collection(String)">
+          <Parameter Name="nr_camera" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spDotare_GetNameRaportCount" ReturnType="Collection(Int32)">
+          <Parameter Name="nr_camera" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spDotare_Insert">
+            <Parameter Name="id_dotare" Mode="In" Type="Int32" />
+            <Parameter Name="denumire" Mode="In" Type="String" />
+            <Parameter Name="pret" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spGetDotByRoom" ReturnType="Collection(HotelTsgDBModel.spGetDotByRoom_Result)">
+          <Parameter Name="nr_camera" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spGetRoomByDot" ReturnType="Collection(HotelTsgDBModel.spGetRoomByDot_Result)">
+          <Parameter Name="id_dotare" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spRezervare_GetAll" ReturnType="Collection(HotelTsgDBModel.spRezervare_GetAll_Result)" />
+          <FunctionImport Name="spRezervare_GetAllByClient" ReturnType="Collection(HotelTsgDBModel.spRezervare_GetAllByClient_Result)">
+          <Parameter Name="id_client" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spRezervare_Insert">
+            <Parameter Name="id_client" Mode="In" Type="Int32" />
+            <Parameter Name="nr_camera" Mode="In" Type="Int32" />
+            <Parameter Name="nr_persoane" Mode="In" Type="Int32" />
+            <Parameter Name="data_check_in" Mode="In" Type="DateTime" />
+            <Parameter Name="data_check_out" Mode="In" Type="DateTime" />
+            <Parameter Name="data_rezervare" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="spServiciu_GetAll" ReturnType="Collection(HotelTsgDBModel.spServiciu_GetAll_Result)" />
+          <FunctionImport Name="spServiciu_GetById" ReturnType="Collection(HotelTsgDBModel.spServiciu_GetById_Result)">
+          <Parameter Name="id_serviciu" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spServiciu_Insert">
+            <Parameter Name="id_serviciu" Mode="In" Type="Int32" />
+            <Parameter Name="denumire" Mode="In" Type="String" />
+            <Parameter Name="pret" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spServiciu_rezervare_Insert">
+            <Parameter Name="id_client" Mode="In" Type="Int32" />
+            <Parameter Name="nr_camera" Mode="In" Type="String" />
+            <Parameter Name="id_serviciu" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spDotare_GetNameRaportRowCount" ReturnType="Collection(String)">
+            <Parameter Name="nr_camera" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spGetServiceByRez" ReturnType="Collection(HotelTsgDBModel.spGetServiceByRez_Result)">
+            <Parameter Name="nr_camera" Mode="In" Type="Int32" />
+            <Parameter Name="id_client" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spRezervareRaportv2" ReturnType="Collection(HotelTsgDBModel.spRezervareRaportv2_Result)">
+            <Parameter Name="nr_camera" Mode="In" Type="Int32" />
+            <Parameter Name="id_client" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="spCamera_GetAll_Result">
+          <Property Type="Int32" Name="nr_camera" Nullable="false" />
+          <Property Type="Int32" Name="capacitate" Nullable="true" />
+          <Property Type="Int32" Name="pret" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spCamera_GetByNumber_Result">
+          <Property Type="Int32" Name="nr_camera" Nullable="false" />
+          <Property Type="Int32" Name="capacitate" Nullable="true" />
+          <Property Type="Int32" Name="pret" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spClient_GetAll_Result">
+          <Property Type="Int32" Name="id_client" Nullable="false" />
+          <Property Type="String" Name="nume" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="prenume" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="telefon" Nullable="true" MaxLength="11" />
+        </ComplexType>
+        <ComplexType Name="spClient_GetById_Result">
+          <Property Type="Int32" Name="id_client" Nullable="false" />
+          <Property Type="String" Name="nume" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="prenume" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="telefon" Nullable="true" MaxLength="11" />
+        </ComplexType>
+        <ComplexType Name="spClient_GetByName_Result">
+          <Property Type="Int32" Name="id_client" Nullable="false" />
+          <Property Type="String" Name="nume" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="prenume" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="telefon" Nullable="true" MaxLength="11" />
+        </ComplexType>
+        <ComplexType Name="spDotare_GetAll_Result">
+          <Property Type="Int32" Name="id_dotare" Nullable="false" />
+          <Property Type="String" Name="denumire" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="pret" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spDotare_GetById_Result">
+          <Property Type="Int32" Name="id_dotare" Nullable="false" />
+          <Property Type="String" Name="denumire" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="pret" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spGetDotByRoom_Result">
+          <Property Type="Int32" Name="id_dotare" Nullable="false" />
+          <Property Type="String" Name="denumire" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="pret" Nullable="true" />
+          <Property Type="Int32" Name="nr_camera" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spGetRoomByDot_Result">
+          <Property Type="Int32" Name="nr_camera" Nullable="false" />
+          <Property Type="Int32" Name="capacitate" Nullable="true" />
+          <Property Type="Int32" Name="pret" Nullable="true" />
+          <Property Type="Int32" Name="id_dotare" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spRezervare_GetAll_Result">
+          <Property Type="Int32" Name="id_client" Nullable="false" />
+          <Property Type="Int32" Name="nr_camera" Nullable="false" />
+          <Property Type="Int32" Name="nr_persoane" Nullable="true" />
+          <Property Type="DateTime" Name="data_check_in" Nullable="true" />
+          <Property Type="DateTime" Name="data_check_out" Nullable="true" />
+          <Property Type="DateTime" Name="data_rezervare" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spRezervare_GetAllByClient_Result">
+          <Property Type="Int32" Name="id_client" Nullable="false" />
+          <Property Type="Int32" Name="nr_camera" Nullable="false" />
+          <Property Type="Int32" Name="nr_persoane" Nullable="true" />
+          <Property Type="DateTime" Name="data_check_in" Nullable="true" />
+          <Property Type="DateTime" Name="data_check_out" Nullable="true" />
+          <Property Type="DateTime" Name="data_rezervare" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spRezervareRaport_Result">
+          <Property Type="String" Name="nume" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="prenume" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="telefon" Nullable="true" MaxLength="11" />
+          <Property Type="DateTime" Name="data_check_in" Nullable="true" />
+          <Property Type="DateTime" Name="data_check_out" Nullable="true" />
+          <Property Type="DateTime" Name="data_rezervare" Nullable="true" />
+          <Property Type="Int32" Name="nr_camera" Nullable="false" />
+          <Property Type="Int32" Name="capacitate" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spServiciu_GetAll_Result">
+          <Property Type="Int32" Name="id_serviciu" Nullable="false" />
+          <Property Type="String" Name="denumire" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="pret" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spServiciu_GetById_Result">
+          <Property Type="Int32" Name="id_serviciu" Nullable="false" />
+          <Property Type="String" Name="denumire" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="pret" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spGetServiceByRez_Result">
+          <Property Type="String" Name="denumire" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="pret" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spRezervareRaportv2_Result">
+          <Property Type="String" Name="nume" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="prenume" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="telefon" Nullable="true" MaxLength="11" />
+          <Property Type="DateTime" Name="data_check_in" Nullable="true" />
+          <Property Type="DateTime" Name="data_check_out" Nullable="true" />
+          <Property Type="DateTime" Name="data_rezervare" Nullable="true" />
+          <Property Type="Int32" Name="nr_camera" Nullable="false" />
+          <Property Type="Int32" Name="capacitate" Nullable="true" />
+          <Property Type="Int32" Name="pret" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HotelTsgDBModelStoreContainer" CdmEntityContainer="HotelTsgDBEntities" >
+          <FunctionImportMapping FunctionImportName="spCamera_Delete" FunctionName="HotelTsgDBModel.Store.spCamera_Delete" />
+          <FunctionImportMapping FunctionImportName="spCamera_GetAll" FunctionName="HotelTsgDBModel.Store.spCamera_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HotelTsgDBModel.spCamera_GetAll_Result">
+                <ScalarProperty Name="nr_camera" ColumnName="nr_camera" />
+                <ScalarProperty Name="capacitate" ColumnName="capacitate" />
+                <ScalarProperty Name="pret" ColumnName="pret" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spCamera_GetByNumber" FunctionName="HotelTsgDBModel.Store.spCamera_GetByNumber">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HotelTsgDBModel.spCamera_GetByNumber_Result">
+                <ScalarProperty Name="nr_camera" ColumnName="nr_camera" />
+                <ScalarProperty Name="capacitate" ColumnName="capacitate" />
+                <ScalarProperty Name="pret" ColumnName="pret" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spCamera_Insert" FunctionName="HotelTsgDBModel.Store.spCamera_Insert" />
+          <FunctionImportMapping FunctionImportName="spCamere_UpdatePrice" FunctionName="HotelTsgDBModel.Store.spCamere_UpdatePrice" />
+          <FunctionImportMapping FunctionImportName="spClient_GetAll" FunctionName="HotelTsgDBModel.Store.spClient_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HotelTsgDBModel.spClient_GetAll_Result">
+                <ScalarProperty Name="id_client" ColumnName="id_client" />
+                <ScalarProperty Name="nume" ColumnName="nume" />
+                <ScalarProperty Name="prenume" ColumnName="prenume" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spClient_GetById" FunctionName="HotelTsgDBModel.Store.spClient_GetById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HotelTsgDBModel.spClient_GetById_Result">
+                <ScalarProperty Name="id_client" ColumnName="id_client" />
+                <ScalarProperty Name="nume" ColumnName="nume" />
+                <ScalarProperty Name="prenume" ColumnName="prenume" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spClient_GetByName" FunctionName="HotelTsgDBModel.Store.spClient_GetByName">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HotelTsgDBModel.spClient_GetByName_Result">
+                <ScalarProperty Name="id_client" ColumnName="id_client" />
+                <ScalarProperty Name="nume" ColumnName="nume" />
+                <ScalarProperty Name="prenume" ColumnName="prenume" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spClient_Insert" FunctionName="HotelTsgDBModel.Store.spClient_Insert" />
+          <FunctionImportMapping FunctionImportName="spDotare_camera_Insert" FunctionName="HotelTsgDBModel.Store.spDotare_camera_Insert" />
+          <FunctionImportMapping FunctionImportName="spDotare_GetAll" FunctionName="HotelTsgDBModel.Store.spDotare_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HotelTsgDBModel.spDotare_GetAll_Result">
+                <ScalarProperty Name="id_dotare" ColumnName="id_dotare" />
+                <ScalarProperty Name="denumire" ColumnName="denumire" />
+                <ScalarProperty Name="pret" ColumnName="pret" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spDotare_GetById" FunctionName="HotelTsgDBModel.Store.spDotare_GetById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HotelTsgDBModel.spDotare_GetById_Result">
+                <ScalarProperty Name="id_dotare" ColumnName="id_dotare" />
+                <ScalarProperty Name="denumire" ColumnName="denumire" />
+                <ScalarProperty Name="pret" ColumnName="pret" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spDotare_Insert" FunctionName="HotelTsgDBModel.Store.spDotare_Insert" />
+          <FunctionImportMapping FunctionImportName="spGetDotByRoom" FunctionName="HotelTsgDBModel.Store.spGetDotByRoom">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HotelTsgDBModel.spGetDotByRoom_Result">
+                <ScalarProperty Name="id_dotare" ColumnName="id_dotare" />
+                <ScalarProperty Name="denumire" ColumnName="denumire" />
+                <ScalarProperty Name="pret" ColumnName="pret" />
+                <ScalarProperty Name="nr_camera" ColumnName="nr_camera" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spGetRoomByDot" FunctionName="HotelTsgDBModel.Store.spGetRoomByDot">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HotelTsgDBModel.spGetRoomByDot_Result">
+                <ScalarProperty Name="nr_camera" ColumnName="nr_camera" />
+                <ScalarProperty Name="capacitate" ColumnName="capacitate" />
+                <ScalarProperty Name="pret" ColumnName="pret" />
+                <ScalarProperty Name="id_dotare" ColumnName="id_dotare" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spRezervare_GetAll" FunctionName="HotelTsgDBModel.Store.spRezervare_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HotelTsgDBModel.spRezervare_GetAll_Result">
+                <ScalarProperty Name="id_client" ColumnName="id_client" />
+                <ScalarProperty Name="nr_camera" ColumnName="nr_camera" />
+                <ScalarProperty Name="nr_persoane" ColumnName="nr_persoane" />
+                <ScalarProperty Name="data_check_in" ColumnName="data_check_in" />
+                <ScalarProperty Name="data_check_out" ColumnName="data_check_out" />
+                <ScalarProperty Name="data_rezervare" ColumnName="data_rezervare" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spRezervare_GetAllByClient" FunctionName="HotelTsgDBModel.Store.spRezervare_GetAllByClient">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HotelTsgDBModel.spRezervare_GetAllByClient_Result">
+                <ScalarProperty Name="id_client" ColumnName="id_client" />
+                <ScalarProperty Name="nr_camera" ColumnName="nr_camera" />
+                <ScalarProperty Name="nr_persoane" ColumnName="nr_persoane" />
+                <ScalarProperty Name="data_check_in" ColumnName="data_check_in" />
+                <ScalarProperty Name="data_check_out" ColumnName="data_check_out" />
+                <ScalarProperty Name="data_rezervare" ColumnName="data_rezervare" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spRezervare_Insert" FunctionName="HotelTsgDBModel.Store.spRezervare_Insert" />
+          <FunctionImportMapping FunctionImportName="spServiciu_GetAll" FunctionName="HotelTsgDBModel.Store.spServiciu_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HotelTsgDBModel.spServiciu_GetAll_Result">
+                <ScalarProperty Name="id_serviciu" ColumnName="id_serviciu" />
+                <ScalarProperty Name="denumire" ColumnName="denumire" />
+                <ScalarProperty Name="pret" ColumnName="pret" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spServiciu_GetById" FunctionName="HotelTsgDBModel.Store.spServiciu_GetById">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HotelTsgDBModel.spServiciu_GetById_Result">
+                <ScalarProperty Name="id_serviciu" ColumnName="id_serviciu" />
+                <ScalarProperty Name="denumire" ColumnName="denumire" />
+                <ScalarProperty Name="pret" ColumnName="pret" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spServiciu_Insert" FunctionName="HotelTsgDBModel.Store.spServiciu_Insert" />
+          <FunctionImportMapping FunctionImportName="spServiciu_rezervare_Insert" FunctionName="HotelTsgDBModel.Store.spServiciu_rezervare_Insert" />
+          <FunctionImportMapping FunctionImportName="spGetServiceByRez" FunctionName="HotelTsgDBModel.Store.spGetServiceByRez">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HotelTsgDBModel.spGetServiceByRez_Result">
+                <ScalarProperty Name="denumire" ColumnName="denumire" />
+                <ScalarProperty Name="pret" ColumnName="pret" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spRezervareRaportv2" FunctionName="HotelTsgDBModel.Store.spRezervareRaportv2">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HotelTsgDBModel.spRezervareRaportv2_Result">
+                <ScalarProperty Name="nume" ColumnName="nume" />
+                <ScalarProperty Name="prenume" ColumnName="prenume" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="data_check_in" ColumnName="data_check_in" />
+                <ScalarProperty Name="data_check_out" ColumnName="data_check_out" />
+                <ScalarProperty Name="data_rezervare" ColumnName="data_rezervare" />
+                <ScalarProperty Name="nr_camera" ColumnName="nr_camera" />
+                <ScalarProperty Name="capacitate" ColumnName="capacitate" />
+                <ScalarProperty Name="pret" ColumnName="pret" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
